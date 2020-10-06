@@ -9,7 +9,7 @@ import LRU from 'lru-cache';
 import uniqueId from 'lodash.uniqueid';
 import { Config } from './config';
 import { Relay } from './relay';
-import { MuxRelay } from './mux-relay';
+// import { MuxRelay } from './mux-relay';
 import { SpeedTester, dumpHex, logger } from '../utils';
 import { http as httpProxy, socks, tcp } from '../proxies';
 

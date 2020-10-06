@@ -1,16 +1,16 @@
 import EventEmitter from 'events';
-import { ACL, ACL_CLOSE_CONNECTION } from './acl';
+// import { ACL, ACL_CLOSE_CONNECTION } from './acl';
 import { Pipe } from './pipe';
 import { Tracker } from './tracker';
 import { getRandomInt, logger } from '../utils';
 
 import {
   TcpInbound, TcpOutbound,
-  UdpInbound, UdpOutbound,
-  TlsInbound, TlsOutbound,
-  Http2Inbound, Http2Outbound,
+  // UdpInbound, UdpOutbound,
+  // TlsInbound, TlsOutbound,
+  // Http2Inbound, Http2Outbound,
   WsInbound, WsOutbound,
-  WssInbound, WssOutbound,
+  // WssInbound, WssOutbound,
 } from '../transports';
 
 import { PIPE_ENCODE, PIPE_DECODE, CONNECT_TO_REMOTE, PRESET_FAILED } from '../constants';
@@ -118,11 +118,11 @@ export class Relay extends EventEmitter {
   _getBounds(transport) {
     const mapping = {
       'tcp': [TcpInbound, TcpOutbound],
-      'udp': [UdpInbound, UdpOutbound],
-      'tls': [TlsInbound, TlsOutbound],
-      'h2': [Http2Inbound, Http2Outbound],
+      // 'udp': [UdpInbound, UdpOutbound],
+      // 'tls': [TlsInbound, TlsOutbound],
+      // 'h2': [Http2Inbound, Http2Outbound],
       'ws': [WsInbound, WsOutbound],
-      'wss': [WssInbound, WssOutbound],
+      // 'wss': [WssInbound, WssOutbound],
     };
     let Inbound = null, Outbound = null;
     if (transport === 'udp') {
