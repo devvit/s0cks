@@ -1,5 +1,5 @@
 import EventEmitter from 'events';
-import { ACL, ACL_CLOSE_CONNECTION } from './acl';
+// import { ACL, ACL_CLOSE_CONNECTION } from './acl';
 import { Pipe } from './pipe';
 import { Tracker } from './tracker';
 import { getRandomInt, logger } from '../utils';
