@@ -1,20 +1,10 @@
-"use strict";
+export class SpeedTester {
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.SpeedTester = void 0;
+  _totalBytes = 0;
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  _lastTime = Date.now();
 
-class SpeedTester {
-  constructor() {
-    _defineProperty(this, "_totalBytes", 0);
-
-    _defineProperty(this, "_lastTime", Date.now());
-
-    _defineProperty(this, "_lastSpeed", 0);
-  }
+  _lastSpeed = 0;
 
   /**
    * put some bytes to measure later
@@ -23,16 +13,14 @@ class SpeedTester {
   feed(bytes) {
     this._totalBytes += bytes;
   }
+
   /**
    * return speed in byte/s
    * @returns {number}
    */
-
-
   getSpeed() {
     const now = Date.now();
     const timeDiff = now - this._lastTime;
-
     if (timeDiff > 0) {
       const speed = this._totalBytes / (timeDiff / 1e3);
       this._lastTime = now;
@@ -45,5 +33,3 @@ class SpeedTester {
   }
 
 }
-
-exports.SpeedTester = SpeedTester;

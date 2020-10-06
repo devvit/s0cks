@@ -1,21 +1,9 @@
-"use strict";
+import net from 'net';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.createServer = createServer;
+export function createServer({ forwardHost, forwardPort }) {
+  const server = net.createServer();
 
-var _net = _interopRequireDefault(require("net"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function createServer({
-  forwardHost,
-  forwardPort
-}) {
-  const server = _net.default.createServer();
-
-  server.on('connection', socket => {
+  server.on('connection', (socket) => {
     socket.pause();
     server.emit('proxyConnection', socket, {
       host: forwardHost,
@@ -25,5 +13,6 @@ function createServer({
       }
     });
   });
+
   return server;
 }

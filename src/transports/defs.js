@@ -1,35 +1,21 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Outbound = exports.Inbound = void 0;
-
-var _events = _interopRequireDefault(require("events"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+/* eslint-disable no-unused-vars */
+import EventEmitter from 'events';
 
 // .on('_error')
 // .on('data')
 // .on('close')
-class Bound extends _events.default {
-  constructor({
-    config,
-    source,
-    conn
-  }) {
+class Bound extends EventEmitter {
+
+  _config = null;
+
+  _source = null;
+
+  _conn = null;
+
+  _destroyed = false;
+
+  constructor({ config, source, conn }) {
     super();
-
-    _defineProperty(this, "_config", null);
-
-    _defineProperty(this, "_source", null);
-
-    _defineProperty(this, "_conn", null);
-
-    _defineProperty(this, "_destroyed", false);
-
     this._config = config;
     this._source = source;
     this._conn = conn;
@@ -59,22 +45,24 @@ class Bound extends _events.default {
     return this._destroyed;
   }
 
-  onBroadcast() {}
+  onBroadcast() {
 
-  write(buffer) {}
+  }
 
-  close() {}
+  write(buffer) {
+
+  }
+
+  close() {
+
+  }
 
 }
 
-class Inbound extends Bound {
-  constructor(...args) {
-    super(...args);
+export class Inbound extends Bound {
 
-    _defineProperty(this, "_outbound", null);
-  }
+  _outbound = null; // set by relay
 
-  // set by relay
   get name() {
     return 'inbound';
   }
@@ -89,16 +77,10 @@ class Inbound extends Bound {
 
 }
 
-exports.Inbound = Inbound;
+export class Outbound extends Bound {
 
-class Outbound extends Bound {
-  constructor(...args) {
-    super(...args);
+  _inbound = null; // set by relay
 
-    _defineProperty(this, "_inbound", null);
-  }
-
-  // set by relay
   get name() {
     return 'outbound';
   }
@@ -111,8 +93,8 @@ class Outbound extends Bound {
     return this._inbound;
   }
 
-  async connect() {}
+  async connect() {
+
+  }
 
 }
-
-exports.Outbound = Outbound;
