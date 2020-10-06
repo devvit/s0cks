@@ -1,14 +1,12 @@
 import net from 'net';
 import { Inbound, Outbound } from './defs';
 import { DNSCache, logger } from '../utils';
-/*
 import {
   ACL_PAUSE_RECV,
   ACL_PAUSE_SEND,
   ACL_RESUME_RECV,
   ACL_RESUME_SEND,
 } from '../core/acl';
-*/
 
 const MAX_BUFFERED_SIZE = 512 * 1024; // 512KB
 

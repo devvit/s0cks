@@ -7,7 +7,7 @@ import chalk from 'chalk';
 import winston from 'winston';
 import WinstonDailyRotateFile from 'winston-daily-rotate-file';
 import isPlainObject from 'lodash.isplainobject';
-// import { ACL } from './acl';
+import { ACL } from './acl';
 import { PROTOCOL_DEFAULT_PORTS } from '../constants';
 import { getPresetClassByName } from '../presets';
 import { DNSCache, isValidHostname, isValidPort, logger, DNS_DEFAULT_EXPIRE } from '../utils';
