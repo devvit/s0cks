@@ -1,34 +1,30 @@
 // private presets
-// import MuxPreset from './_mux';
+import MuxPreset from './_mux';
 
 // basic
-// import BaseAuthPreset from './base-auth';
+import BaseAuthPreset from './base-auth';
 
 // shadowsocks
 import SsBasePreset from './ss-base';
 import SsStreamCipherPreset from './ss-stream-cipher';
-// import SsAeadCipherPreset from './ss-aead-cipher';
+import SsAeadCipherPreset from './ss-aead-cipher';
 
 // shadowsocksr
-/*
 import SsrAuthAes128Md5Preset from './ssr-auth-aes128-md5';
 import SsrAuthAes128Sha1Preset from './ssr-auth-aes128-sha1';
 import SsrAuthChainAPreset from './ssr-auth-chain-a';
 import SsrAuthChainBPreset from './ssr-auth-chain-b';
-*/
 
 // v2ray
-// import V2rayVmessPreset from './v2ray-vmess';
+import V2rayVmessPreset from './v2ray-vmess';
 
 // obfuscator
-/*
 import ObfsRandomPaddingPreset from './obfs-random-padding';
 import ObfsHttpPreset from './obfs-http';
 import ObfsTls12TicketPreset from './obfs-tls1.2-ticket';
-*/
 
 // others
-// import AeadRandomCipherPreset from './aead-random-cipher';
+import AeadRandomCipherPreset from './aead-random-cipher';
 
 /**
  * check if a class is a valid preset class
@@ -54,36 +50,32 @@ function checkPresetClass(clazz) {
 
 export const builtInPresetMap = {
   // functional
-  // 'mux': MuxPreset,
+  'mux': MuxPreset,
 
   // basic
-  // 'base-auth': BaseAuthPreset,
+  'base-auth': BaseAuthPreset,
 
   // shadowsocks
   'ss-base': SsBasePreset,
   'ss-stream-cipher': SsStreamCipherPreset,
-  // 'ss-aead-cipher': SsAeadCipherPreset,
+  'ss-aead-cipher': SsAeadCipherPreset,
 
   // shadowsocksr
-  /*
   'ssr-auth-aes128-md5': SsrAuthAes128Md5Preset,
   'ssr-auth-aes128-sha1': SsrAuthAes128Sha1Preset,
   'ssr-auth-chain-a': SsrAuthChainAPreset,
   'ssr-auth-chain-b': SsrAuthChainBPreset,
-  */
 
   // v2ray
-  // 'v2ray-vmess': V2rayVmessPreset,
+  'v2ray-vmess': V2rayVmessPreset,
 
   // obfuscator
-  /*
   'obfs-random-padding': ObfsRandomPaddingPreset,
   'obfs-http': ObfsHttpPreset,
   'obfs-tls1.2-ticket': ObfsTls12TicketPreset,
-  */
 
   // others
-  // 'aead-random-cipher': AeadRandomCipherPreset
+  'aead-random-cipher': AeadRandomCipherPreset
 };
 
 export function getPresetClassByName(name, allowPrivate = false) {
