@@ -4,6 +4,9 @@
   "description": "RN module",
   "main": "lib/index.js",
   "license": "MIT",
+  "scripts": {
+    "compile": "NODE_ENV=production babel src --out-dir lib --ignore __tests__,__mocks__ --presets='latest-node' --plugins='@babel/plugin-proposal-class-properties,@babel/plugin-proposal-object-rest-spread'"
+  },
   "dependencies": {
     "chalk": "^4.1.0",
     "filesize": "^6.1.0",
