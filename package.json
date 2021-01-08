@@ -1,5 +1,5 @@
 {
-  "name": "litesocks",
+  "name": "s0cks",
   "version": "0.0.1",
   "description": "Simple module",
   "main": "lib/index.js",
